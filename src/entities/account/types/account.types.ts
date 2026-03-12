@@ -9,18 +9,16 @@ export interface Account {
 }
 
 export interface LoginBody {
-  email: string
+  username: string
   password: string
 }
 
 export interface LoginResponse {
   token: string
-  user: Account
 }
 
 export interface RegisterBody {
+  username: string
   email: string
   password: string
-  firstName: string
-  lastName: string
 }

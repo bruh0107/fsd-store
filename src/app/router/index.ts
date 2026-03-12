@@ -15,6 +15,12 @@ const router = createRouter({
       component: () => import('@/pages/login/LoginPage.vue'),
     },
     {
+      path: Routes.products,
+      name: 'products',
+      component: () => import('@/pages/catalog/CatalogPage.vue'),
+    },
+
+    {
       path: '/:pathMatch(.*)*',
       name: 'not-found',
       redirect: Routes.home,

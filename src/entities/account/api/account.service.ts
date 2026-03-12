@@ -6,7 +6,7 @@ export const accountService = {
     api.post<LoginResponse>('auth/login', data).then((res) => res.data),
 
   register: (data: RegisterBody) =>
-    api.post<LoginResponse>('auth/register', data).then((res) => res.data),
+    api.post<LoginResponse>('users', data).then((res) => res.data),
 
   profile: () =>
     api.get<Account>('auth/profile').then((res) => res.data),
