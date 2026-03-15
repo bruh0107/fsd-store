@@ -13,23 +13,43 @@ const { mutateAsync: logout } = useLogout()
 <template>
   <header class="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-sm">
     <div class="container mx-auto flex h-16 items-center justify-between px-4">
-      <router-link :to="Routes.home" class="text-xl font-bold text-brand">
+      <router-link
+        :to="Routes.home"
+        class="text-xl font-bold text-brand"
+      >
         Logo
+      </router-link>
+
+      <router-link
+        :to="Routes.products"
+        class="text-xl font-bold text-brand"
+      >
+        Каталог
       </router-link>
 
       <nav class="flex items-center gap-4">
         <template v-if="isAuth">
-          <span v-if="profile" class="text-sm text-gray-600">
+          <span
+            v-if="profile"
+            class="text-sm text-gray-600"
+          >
             {{ profile.firstName }} {{ profile.lastName }}
           </span>
-          <app-button variant="ghost" size="sm" @click="logout">
+          <app-button
+            variant="ghost"
+            size="sm"
+            @click="logout"
+          >
             Выйти
           </app-button>
         </template>
 
         <template v-else>
           <router-link :to="Routes.login">
-            <app-button variant="primary" size="sm">
+            <app-button
+              variant="primary"
+              size="sm"
+            >
               Войти
             </app-button>
           </router-link>
